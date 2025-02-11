@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Profile Selection Interface">
+    <meta name="author" content="Your Name">
+    <meta name="keywords" content="Profile, Selection, Interface, HTML, CSS, JavaScript">
+    <title>Profile Selection</title>
+    <link rel="stylesheet" href="{% static 'css/browse.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="browse-container">
+        <p class="who-is-watching">Who's Watching?</p>
+        <div class="profiles">
+            <div class="profile-card">
+                <a href="#">
+                    <div class="image-container">
+                        <img src="/static/media/recruiter.jpg" alt="Recruiter Profile" class="profile-image">
+                    </div>
+                    <h3 class="profile-name">Recruiter</h3>
+                </a>
+            </div>
+                
+            <div class="profile-card">
+                <a href="">
+                    <div class="image-container">
+                        <img src="/static/media/dev.jpg" alt="Developer Profile" class="profile-image">
+                    </div>
+                    <h3 class="profile-name">Developer</h3>
+                </a>   
+            </div>
+
+            <div class="profile-card"> 
+               <a href="">
+                    <div class="image-container">
+                        <img src="/static/media/stalker.jpg" alt="Stalker Profile" class="profile-image">
+                    </div>
+                    <h3 class="profile-name">Stalker</h3>
+                </a>
+            </div>
+
+            <div class="profile-card">
+                <a href="">
+                    <div class="image-container">
+                        <img src="/static/media/adventurer.jpg" alt="Adventurer Profile" class="profile-image">
+                    </div>
+                    <h3 class="profile-name">Adventurer</h3>
+                </a>
+            </div>
+        </div>    
+    </div>
+</body>
+</html>
