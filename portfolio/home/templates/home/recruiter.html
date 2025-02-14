@@ -18,7 +18,7 @@
     <nav class="navbar">
         <div class="logo">Karan Bista</div>
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
+            <li><a href="{% url 'browse' %}">Home</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -116,6 +116,7 @@
     <section id="contact" class="contact">
         <h2>Contact Me</h2>
         <form action="#" method="post">
+            {% csrf_token %}
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
@@ -125,7 +126,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
     </footer>
 
     <!-- JavaScript -->
