@@ -115,13 +115,14 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2>Contact Me</h2>
-        <form action="#" method="post">
+        <form id="contact-form" method="post">
             {% csrf_token %}
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
             <button type="submit" class="btn">Send Message</button>
         </form>
+        <div id="message-status" class="message-status"></div>
     </section>
 
     <!-- Footer -->
@@ -168,6 +169,35 @@
     function toggleMenu() {
         document.querySelector(".nav-links").classList.toggle("show");
     }
+
+    // form submission
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent the default form submission
+
+        const form = e.target;
+        const formData = new FormData(form);
+        const messageStatus = document.getElementById('message-status');
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': formData.get('csrfmiddlewaretoken'), // Include CSRF token
+            },
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.success) {
+                    messageStatus.innerHTML = `<p class="success">${data.message}</p>`;
+                    form.reset(); // Clear the form
+                } else {
+                    messageStatus.innerHTML = `<p class="error">${data.message}</p>`;
+                }
+            })
+            .catch((error) => {
+                messageStatus.innerHTML = `<p class="error">An error occurred. Please try again later.</p>`;
+            });
+    });
   </script>
 </body>
 </html>
