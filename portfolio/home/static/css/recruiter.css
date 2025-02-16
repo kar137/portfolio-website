@@ -354,3 +354,19 @@ footer {
     0% { text-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8); }
     100% { text-shadow: 0px 0px 30px rgba(0, 255, 255, 1); }
 }
+
+/* Message Status */
+.message-status {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.message-status .success {
+    color: #0ff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+.message-status .error {
+    color: #ff0077;
+    text-shadow: 0 0 10px rgba(255, 0, 119, 0.8);
+}
