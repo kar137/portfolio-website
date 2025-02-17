@@ -24,7 +24,7 @@ This project is NOT open-source. The code, design, and all associated assets are
 
 ## 📩 Contact
 
-For inquiries regarding usage or licensing, please contact me at: [Your Email]
+For inquiries regarding usage or licensing, please contact me at: bistakaran89@gmail.com
 
 <hr>
 
