@@ -6,7 +6,7 @@ Welcome to my personal portfolio website! This website showcases my skills, proj
 
 All Rights Reserved © Karan Bista 2025
 
-This project is NOT open-source. The code, design, and all associated assets are the intellectual property of [Your Name] and are protected under copyright law.
+This project is NOT open-source. The code, design, and all associated assets are the intellectual property of Karan Bista and are protected under copyright law.
 
 ❌ You May NOT:
 
