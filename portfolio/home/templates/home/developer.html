@@ -1,0 +1,134 @@
+<!-- developer.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer - Karan Bista</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> <!-- For typing animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/recruiter.css' %}">
+</head>
+<body class="developer-theme">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Your Name</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#github">GitHub</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="glow-text">Welcome to the <span id="typed"></span></h1>
+            <p class="tech-title">Building the future, one line of code at a time.</p>
+            <p class="hero-desc">I'm a Full Stack Developer specializing in Django, Python, and modern frontend technologies. Let's create something amazing together!</p>
+            <a href="#projects" class="btn">Explore My Projects</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2 class="glitch">About Me</h2>
+        <p class="fade-in">Hi, I'm a passionate developer with expertise in building scalable web applications, solving complex problems, and delivering high-quality solutions. I love exploring new technologies and contributing to open-source projects.</p>
+        <div class="tech-stack">
+            <span>Django</span>
+            <span>Python</span>
+            <span>React</span>
+            <span>JavaScript</span>
+            <span>PostgreSQL</span>
+            <span>Docker</span>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fab fa-python"></i>
+                <h3>Python</h3>
+                <p>Expertise in Python for backend development, data analysis, and automation.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-js"></i>
+                <h3>JavaScript</h3>
+                <p>Proficient in modern JavaScript frameworks like React and Vue.js.</p>
+            </div>
+            <div class="skill-card">
+                <img src="https://www.svgrepo.com/show/353657/django-icon.svg" alt="Django Logo" width="50">
+                <h3>Django</h3>
+                <p>Deep knowledge of Django for building scalable and secure web applications.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-docker"></i>
+                <h3>Docker</h3>
+                <p>Experience in containerizing applications for seamless deployment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="{% static 'images/project1.jpg' %}" alt="E-Commerce Platform">
+                <h3>E-Commerce Platform</h3>
+                <p>A full-stack e-commerce platform built with Django and React, featuring user authentication, payment integration, and product management.</p>
+                <a href="#" class="btn">View Project</a>
+            </div>
+            <div class="project-card">
+                <img src="{% static 'images/project2.jpg' %}" alt="Blogging Platform">
+                <h3>Blogging Platform</h3>
+                <p>A blogging platform with rich text editing, user profiles, and real-time notifications using Django and WebSockets.</p>
+                <a href="#" class="btn">View Project</a>
+            </div>
+            <div class="project-card">
+                <img src="{% static 'images/project3.jpg' %}" alt="Task Management App">
+                <h3>Task Management App</h3>
+                <p>A task management application with drag-and-drop functionality, built using Django REST Framework and React.</p>
+                <a href="#" class="btn">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form" method="post">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+        <div id="message-status" class="message-status"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Karan Bista. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Typing Animation -->
+    <script>
+        const typed = new Typed('#typed', {
+            strings: ['Developer Zone', 'Code Playground', 'Tech Hub'],
+            typeSpeed: 100,
+            backSpeed: 50,
+            loop: true
+        });
+    </script>
+</body>
+</html>

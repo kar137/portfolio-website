@@ -38,3 +38,7 @@ class RecruiterView(TemplateView):
             return JsonResponse({'success': False, 'message': 'Failed to send message. Please try again later.'})
         
 
+class DeveloperView(TemplateView):
+    template_name = "home/developer.html"
+        
+

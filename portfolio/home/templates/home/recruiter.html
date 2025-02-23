@@ -188,10 +188,10 @@
             .then((response) => response.json())
             .then((data) => {
                 if (data.success) {
-                    messageStatus.innerHTML = `<p class="success">${data.message}</p>`;
+                    messageStatus.innerHTML = `<p class="success">${data.message}</p>`;  // Display success message
                     form.reset(); // Clear the form
                 } else {
-                    messageStatus.innerHTML = `<p class="error">${data.message}</p>`;
+                    messageStatus.innerHTML = `<p class="error">${data.message}</p>`;  // Display error message
                 }
             })
             .catch((error) => {
