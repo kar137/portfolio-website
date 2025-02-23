@@ -134,7 +134,7 @@
         <p>&copy; 2025 Karan Bista. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for Typing Animation -->
+    <!-- JavaScript  -->
     <script>
         const typed = new Typed('#typed', {
             strings: ['Developer Zone', 'Code Playground', 'Tech Hub'],
@@ -142,6 +142,36 @@
             backSpeed: 50,
             loop: true
         });
+
+        // form submission
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            const form = e.target;
+            const formData = new FormData(form);
+            const messageStatus = document.getElementById('message-status');
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRFToken': formData.get('csrfmiddlewaretoken'), // Include CSRF token
+                },
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.success) {
+                        messageStatus.innerHTML = `<p class="success">${data.message}</p>`;  // Display success message
+                        form.reset(); // Clear the form
+                    } else {
+                        messageStatus.innerHTML = `<p class="error">${data.message}</p>`;  // Display error message
+                    }
+                })
+                .catch((error) => {
+                    messageStatus.innerHTML = `<p class="error">An error occurred. Please try again later.</p>`;
+                });
+        });
+
     </script>
 </body>
 </html>
