@@ -290,6 +290,18 @@ body.developer-theme {
     color: #cbd5e1;
     margin-top: 20px;
 }
+.github .btn {
+    background-color: #0ff;
+    color: #0a0a0a;
+    margin-top: 0.9rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.github .btn:hover {
+    background-color: #ff0077;
+}
 
 /* Contact Section */
 .contact {
