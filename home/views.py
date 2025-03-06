@@ -82,3 +82,25 @@ class StalkerView(TemplateView):
         except Exception as e:
             return JsonResponse({'success': False, 'message': 'Failed to send message. Please try again later.'})
 
+class AdventurerView(TemplateView):
+    template_name = "home/adventurer.html"
+    
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, {'title':'Adventurer'})
+    
+    def post(self, request, *args, **kwargs):
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        message = request.POST.get("message")
+        try:
+            send_mail(
+                subject= f"New message from {name}",
+                message= f"Name: {name}\nEmail: {email}\nMessage: {message}",
+                from_email= settings.EMAIL_HOST_USER,
+                recipient_list= [settings.EMAIL_HOST_USER],
+                fail_silently= False,
+            )
+            return JsonResponse({'success': 'True', 'message': 'Your message has been sent successfully!'})
+        except Exception as e:
+            return JsonResponse({'success': False, 'message': 'Failed to send message. Please try again later.'})
+
