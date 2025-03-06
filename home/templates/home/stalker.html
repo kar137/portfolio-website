@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stalker - Into the Shadows</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/stalker.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="stalker-theme">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Stalker</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#missions">Missions</a></li>
+            <li><a href="#gear">Gear</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="glow-text">Enter the <span id="typed"></span></h1>
+            <p class="subtitle">Where shadows speak and danger lurks.</p>
+            <p class="hero-desc">Become a Stalker. Navigate the Zone, uncover its secrets, and survive its horrors.</p>
+            <a href="#missions" class="btn">Begin Your Journey</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2 class="glitch">About the Zone</h2>
+        <p class="fade-in">The Zone is a place of anomalies, artifacts, and untold dangers. Only the bravest Stalkers dare to enter. Will you survive its mysteries?</p>
+        <div class="zone-features">
+            <span>Anomalies</span>
+            <span>Artifacts</span>
+            <span>Mutations</span>
+            <span>Secrets</span>
+        </div>
+    </section>
+
+    <!-- Missions Section -->
+    <section id="missions" class="missions">
+        <h2>Missions</h2>
+        <div class="missions-grid">
+            <div class="mission-card">
+                <img src="{% static 'images/mission1.jpg' %}" alt="Recon Mission">
+                <h3>Recon Mission</h3>
+                <p>Scout the Zone for anomalies and gather intel on enemy movements.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+            <div class="mission-card">
+                <img src="{% static 'images/mission2.jpg' %}" alt="Artifact Retrieval">
+                <h3>Artifact Retrieval</h3>
+                <p>Retrieve rare artifacts from the heart of the Zone.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+            <div class="mission-card">
+                <img src="{% static 'images/mission3.jpg' %}" alt="Escape the Zone">
+                <h3>Escape the Zone</h3>
+                <p>Navigate through deadly anomalies and make it out alive.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gear Section -->
+    <section id="gear" class="gear">
+        <h2>Gear Up</h2>
+        <div class="gear-grid">
+            <div class="gear-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Protective Gear</h3>
+                <p>Equip yourself with the best armor to survive the Zone's dangers.</p>
+            </div>
+            <div class="gear-card">
+                <i class="fas fa-biohazard"></i>
+                <h3>Anomaly Detectors</h3>
+                <p>Detect and avoid deadly anomalies with advanced technology.</p>
+            </div>
+            <div class="gear-card">
+                <i class="fas fa-tools"></i>
+                <h3>Survival Tools</h3>
+                <p>Essential tools for navigating and surviving in the Zone.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <img src="{% static 'images/gallery1.jpg' %}" alt="Zone Image 1">
+            <img src="{% static 'images/gallery2.jpg' %}" alt="Zone Image 2">
+            <img src="{% static 'images/gallery3.jpg' %}" alt="Zone Image 3">
+            <img src="{% static 'images/gallery4.jpg' %}" alt="Zone Image 4">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Join the Ranks</h2>
+        <form id="contact-form" method="post">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+        <div id="message-status" class="message-status"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Stalker. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const typed = new Typed('#typed', {
+            strings: ['Shadows', 'Unknown', 'Danger'],
+            typeSpeed: 100,
+            backSpeed: 50,
+            loop: true
+        });
+    </script>
+</body>
+</html>
