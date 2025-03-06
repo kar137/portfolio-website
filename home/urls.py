@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import HomeView, BrowseView, RecruiterView, DeveloperView, StalkerView
+from .views import HomeView, BrowseView, RecruiterView, DeveloperView, StalkerView, AdventurerView
 
 urlpatterns = [
     path('home/', HomeView.as_view(), name="home"),
