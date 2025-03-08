@@ -300,6 +300,38 @@ body {
     background-color: #ff0077;
 }
 
+/* GitHub Section */
+/* GitHub Section */
+.github {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #240046, #3c096c);
+}
+
+.github-graph img {
+    width: 100%;
+    max-width: 800px;
+    margin: 5px auto;
+}
+
+.github-desc {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-top: 20px;
+}
+.github .btn {
+    background-color: #0ff;
+    color: #0a0a0a;
+    margin-top: 0.7rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.github .btn:hover {
+    background-color: #ff0077;
+}
+
 /* Contact Section */
 .contact {
     padding: 4rem 0;
