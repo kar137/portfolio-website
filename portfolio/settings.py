@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['www.karanbista.com.np']
 ALLOWED_HOSTS = ['portfolio-website-f26v.onrender.com']
-ALLOWED_HOSTS = []
 
 
 # Application definition
