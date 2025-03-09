@@ -254,9 +254,10 @@ body.adventurer-theme {
     text-align: center;
 }
 
-.tool-card i {
-    font-size: 3rem;
-    color: #0ff;
+.tool-card img {
+    width: 24%;
+    height: 35%;
+    border-radius: 10px;
 }
 
 .tool-card h3 {
