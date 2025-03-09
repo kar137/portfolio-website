@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 from django.core.mail import send_mail
 from django.conf import settings
 from django.http import JsonResponse
+from .models import FavoriteMovies
 
 
 # Create your views here.
@@ -83,8 +84,9 @@ class StalkerView(TemplateView):
             return JsonResponse({'success': False, 'message': 'Failed to send message. Please try again later.'})
 
 class AdventurerView(TemplateView):
+    model = FavoriteMovies
     template_name = "home/adventurer.html"
-    
+    context_object_name = "movies"
     
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, {'title':'Adventurer'})

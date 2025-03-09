@@ -7,3 +7,6 @@ class FavoriteMovies(models.Model):
     description = models.TextField(max_length=200)
     image = models.ImageField(upload_to= "images/")
 
+    def __str__(self):
+        return f"{self.title} {self.description}"
+
