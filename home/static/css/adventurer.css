@@ -201,7 +201,8 @@ body.adventurer-theme {
 }
 
 .expedition-card img {
-    width: 100%;
+    width: 20%;
+    height: 33%;
     border-radius: 10px;
 }
 
