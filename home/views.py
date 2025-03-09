@@ -61,11 +61,18 @@ class DeveloperView(TemplateView):
         except Exception as e:
             return JsonResponse({'success': False, 'message': 'Failed to send message. Please try again later.'})
 
-class StalkerView(TemplateView):
+class StalkerView(ListView):
+    model = FavoriteMovies
     template_name = "home/stalker.html"
+    context_object_name = "movies"
     
-    def get(self, request, *args, **kwargs):
-        return render(request, self.template_name, {'title':'Stalker'})
+    def get_queryset(self):
+        return FavoriteMovies.objects.order_by('-rating')[:3]
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Stalker'
+        return context
     
     def post(self, request, *args, **kwargs):
         name = request.POST.get("name")

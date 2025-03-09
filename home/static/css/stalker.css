@@ -228,24 +228,24 @@ body.stalker-theme {
     background-color: #ff0077;
 }
 
-/* Gear Section */
-.gear {
+/* Tools Section */
+.tools {
     padding: 4rem 0;
     background-color: #0a0a0a;
 }
 
-.gear h2 {
+.tools h2 {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.gear-grid {
+.tools-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
 }
 
-.gear-card {
+.tool-card {
     background-color: #1e293b;
     padding: 1.5rem;
     border-radius: 10px;
@@ -253,22 +253,24 @@ body.stalker-theme {
     text-align: center;
 }
 
-.gear-card i {
-    font-size: 3rem;
-    color: #0ff;
+.tool-card img {
+    width: 24%;
+    height: 35%;
+    border-radius: 10px;
 }
 
-.gear-card h3 {
+.tool-card h3 {
     margin-top: 1rem;
     font-size: 1.2rem;
     color: #0ff;
 }
 
-.gear-card p {
+.tool-card p {
     font-size: 1rem;
     line-height: 1.6;
     color: #cbd5e1;
 }
+
 
 /* Gallery Section */
 .gallery {

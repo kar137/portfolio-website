@@ -81,10 +81,6 @@ body {
     transition: transform 0.3s ease;
 }
 
-.profile-card:hover .image-container {
-    transform: rotate(360deg);
-}
-
 .profile-image {
     width: 100%;
     height: 100%;
