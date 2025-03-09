@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adventurer - Explore the Unknown</title>
+    <title>{{ title }}</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/adventurer.css' %}">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -74,21 +74,13 @@
     <section id="tools" class="tools">
         <h2>Favorite Movies</h2>
         <div class="tools-grid">
-            <div class="tool-card">
-                <img src="{% static 'media/images/inception.jpg' %}" alt="inception">
-                <h3>Inception</h3>
-                <p>A mind-bending journey through dreams within dreams—where reality is just a perception.</p>
-            </div>
-            <div class="tool-card">
-                <img src="{% static 'media/images/endgame.jpg' %}" alt="avengers-endgame">
-                <h3>Avengers: Endgame</h3>
-                <p>The ultimate battle of heroes, sacrifice, and the fate of the universe at stake.</p>
-            </div>
-            <div class="tool-card">
-                <img src="{% static 'media/images/batman.jpg' %}" alt="dark-knight">
-                <h3>The Dark Knight</h3>
-                <p>A gripping tale of chaos, justice, and the legendary rise of Gotham’s protector.</p>
-            </div>
+            {% for movie in movies %}
+                <div class="tool-card">
+                    <img src="{{ movie.image.url }}" alt="inception">
+                    <h3>{{ movie.title }}</h3>
+                    <p>{{ movie.description }}</p>
+                </div>
+            {% endfor %}
         </div>
     </section>
 

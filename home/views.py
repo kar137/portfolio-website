@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 from django.core.mail import send_mail
 from django.conf import settings
 from django.http import JsonResponse
@@ -83,13 +83,18 @@ class StalkerView(TemplateView):
         except Exception as e:
             return JsonResponse({'success': False, 'message': 'Failed to send message. Please try again later.'})
 
-class AdventurerView(TemplateView):
+class AdventurerView(ListView):
     model = FavoriteMovies
     template_name = "home/adventurer.html"
     context_object_name = "movies"
+
+    def get_queryset(self):
+        return FavoriteMovies.objects.order_by('-rating')[:3]
     
-    def get(self, request, *args, **kwargs):
-        return render(request, self.template_name, {'title':'Adventurer'})
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Adventurer'
+        return context
     
     def post(self, request, *args, **kwargs):
         name = request.POST.get("name")
