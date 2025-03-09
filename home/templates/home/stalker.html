@@ -70,25 +70,17 @@
         </div>
     </section>
 
-    <!-- Gear Section -->
-    <section id="gear" class="gear">
-        <h2>Gear Up</h2>
-        <div class="gear-grid">
-            <div class="gear-card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Protective Gear</h3>
-                <p>Equip yourself with the best armor to survive the Zone's dangers.</p>
-            </div>
-            <div class="gear-card">
-                <i class="fas fa-biohazard"></i>
-                <h3>Anomaly Detectors</h3>
-                <p>Detect and avoid deadly anomalies with advanced technology.</p>
-            </div>
-            <div class="gear-card">
-                <i class="fas fa-tools"></i>
-                <h3>Survival Tools</h3>
-                <p>Essential tools for navigating and surviving in the Zone.</p>
-            </div>
+    <!-- Tools Section -->
+    <section id="tools" class="tools">
+        <h2>Favorite Movies</h2>
+        <div class="tools-grid">
+            {% for movie in movies %}
+                <div class="tool-card">
+                    <img src="{{ movie.image.url }}" alt="inception">
+                    <h3>{{ movie.title }}</h3>
+                    <p>{{ movie.description }}</p>
+                </div>
+            {% endfor %}
         </div>
     </section>
 
