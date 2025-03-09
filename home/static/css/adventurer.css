@@ -16,6 +16,7 @@ body.adventurer-theme {
     width: 90%;
     margin: 20px auto;
     background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     padding: 15px 30px;
     border-radius: 12px;
@@ -155,7 +156,7 @@ body.adventurer-theme {
 .fade-in {
     font-size: 1.2rem;
     line-height: 1.6;
-    opacity: 0;
+    opacity: 0.4;
     animation: fadeIn 1.5s ease-in-out forwards;
 }
 
@@ -201,7 +202,8 @@ body.adventurer-theme {
 }
 
 .expedition-card img {
-    width: 100%;
+    width: 20%;
+    height: 33%;
     border-radius: 10px;
 }
 
@@ -253,9 +255,10 @@ body.adventurer-theme {
     text-align: center;
 }
 
-.tool-card i {
-    font-size: 3rem;
-    color: #0ff;
+.tool-card img {
+    width: 24%;
+    height: 35%;
+    border-radius: 10px;
 }
 
 .tool-card h3 {

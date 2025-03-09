@@ -85,6 +85,7 @@ class StalkerView(TemplateView):
 class AdventurerView(TemplateView):
     template_name = "home/adventurer.html"
     
+    
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, {'title':'Adventurer'})
     
