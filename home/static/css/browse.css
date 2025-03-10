@@ -217,6 +217,7 @@ body {
     .profile-image {
         width: 80px; /* Smaller images */
         height: 80px; /* Square image */
+        object-fit: cover;
     }
 
     .profile-name {
@@ -232,20 +233,26 @@ body {
 
     .profiles {
         grid-template-columns: repeat(2, 1fr); /* Still two per row */
-        gap: 0.5rem; /* Reduce gap to save space */
+        gap: 0.3rem; /* Reduce gap to save space */
+        
     }
 
     .profile-card {
         width: 75%; /* smaller width */
-        margin: 8px 0;
+        height: 150px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        padding: 2px;
     }
 
     .profile-image {
-        width: 60px; /* Even smaller images */
-        height: 60px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .profile-name {
         font-size: 1rem; /* Smaller font size */
+        margin-top: 6px;
     }
 }
