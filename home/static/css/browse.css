@@ -202,12 +202,16 @@ body {
 
     .profiles {
         flex-direction: column;
+        grid-template-columns: repeat(2, 1fr);  /* two cards per row */
+        gap: 1rem;
         align-items: center;
     }
 
     .profile-card {
         width: 90%; /* Full width on mobile */
-        margin: 10px 0; /* Space between cards */
+        margin-top: 1px;
+        margin-bottom: 1px;
+        padding: 0.7rem;
     }
 
     .profile-image {
@@ -226,14 +230,19 @@ body {
         font-size: 1.8rem;
     }
 
+    .profiles {
+        grid-template-columns: repeat(2, 1fr); /* Still two per row */
+        gap: 0.5rem; /* Reduce gap to save space */
+    }
+
     .profile-card {
-        width: 100%; /* Full width */
-        margin: 15px 0;
+        width: 75%; /* smaller width */
+        margin: 8px 0;
     }
 
     .profile-image {
-        width: 70px; /* Even smaller images */
-        height: 70px;
+        width: 60px; /* Even smaller images */
+        height: 60px;
     }
 
     .profile-name {
