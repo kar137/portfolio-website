@@ -17,12 +17,15 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo">Karan Bista</div>
-        <ul class="nav-links">
-            <li><a href="{% url 'browse' %}">Home</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="{% url 'browse' %}">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -137,7 +140,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <p>&copy; 2025 Karan Bista. All rights reserved.</p>
     </footer>
 
     <!-- JavaScript -->
