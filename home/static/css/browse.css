@@ -201,6 +201,8 @@ body {
     }
 
     .profiles {
+        max-height: 400px;
+        overflow-y: auto;
         flex-direction: column;
         grid-template-columns: repeat(2, 1fr);  /* two cards per row */
         gap: 1rem;
@@ -211,7 +213,8 @@ body {
         width: 90%; /* Full width on mobile */
         margin-top: 1px;
         margin-bottom: 1px;
-        padding: 0.7rem;
+        margin-right: 2px;
+        padding: 1rem;
     }
 
     .profile-image {
@@ -237,6 +240,8 @@ body {
     }
 
     .profiles {
+        max-height: 300px;
+        overflow-y: auto;
         grid-template-columns: repeat(2, 1fr); /* Still two per row */
         gap: 0.3rem; /* Reduce gap to save space */
         padding: 6px;
