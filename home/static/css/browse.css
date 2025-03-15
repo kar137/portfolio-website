@@ -18,7 +18,19 @@ body {
 
 .browse-container {
     text-align: center;
-    animation: fadeIn 1.5s ease-in-out;
+    margin-top: -160px;
+    position: relative;
+    display: block;
+    will-change: transform;
+    animation: fadeIn 1.5s ease-in-out, moveUp 1.5s ease-in-out;   
+}
+@keyframes moveUp {
+    from {
+        transform: translateY(50px);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
 .who-is-watching {
