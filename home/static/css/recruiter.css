@@ -535,7 +535,11 @@ footer {
     }
 
     .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+    .skill-card{
+        height: fit-content;
     }
 
     .projects-grid {
