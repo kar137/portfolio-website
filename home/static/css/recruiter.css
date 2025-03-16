@@ -535,11 +535,13 @@ footer {
     }
 
     .skills-grid {
+        margin: 0 10px;
         grid-template-columns: repeat(2,1fr);
     }
     
     .skill-card{
         height: fit-content;
+        border-radius: 20px;
     }
 
     .projects-grid {
