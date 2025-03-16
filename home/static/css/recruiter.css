@@ -8,7 +8,6 @@ body {
 }
 
 .container {
-    margin-bottom: -105px;
     width: 90%;
     max-width: 1200px;
 }
@@ -16,11 +15,11 @@ body {
 /* Navigation Bar */
 .navbar {
     width: 95%;
-    top: 0;
+    top: -6px;
     position:fixed;
     margin: 6px auto;
     margin-left: 7px;
-    background: rgba(255, 255, 255, 0.1); 
+    background: #0a0a0a;
     padding: 15px 30px;
     border-radius: 12px;
     display: flex;
@@ -95,13 +94,13 @@ body {
 .hero {
     display: flex;
     width: 98%;
-    border-radius: 12px;
-    margin-top: 20px;
+    border-radius: 25px;
+    margin-top: 110px;
     margin-left: 15px;
     margin-bottom: 20px;
     align-items: center;
     justify-content: center;
-    height: 67vh;
+    height: 57vh;
     background: radial-gradient(circle at center, #0f172a, #1e293b);
     color: white;
     text-align: center;
@@ -317,7 +316,7 @@ body {
     background-color: #ff0077;
 }
 
-/* GitHub Section */
+
 /* GitHub Section */
 .github {
     text-align: center;
