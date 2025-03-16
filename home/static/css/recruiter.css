@@ -424,11 +424,29 @@ footer {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+    body, html {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%; /* Full width */
+        max-width: 100%; /* Allow container to take full width */
+        margin: 0 auto; /* Center the container */
+        padding: 0px 15px; /* Add padding for smaller screens */
+        padding-left: 0px;
+    }
+
     .navbar {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        margin: 0 auto;
         flex-direction: column;
         align-items: flex-start;
         padding: 15px;
     }
+
 
     .nav-links {
         flex-direction: column;
@@ -459,8 +477,12 @@ footer {
     }
 
     .hero {
+        border-radius: 15px;
         height: auto;
-        padding: 60px 20px;
+        padding: 30px 0px;
+        padding-left: 5px;
+        width: 330px;
+        margin-left: 13px;
     }
 
     .glow-text {
@@ -493,9 +515,10 @@ footer {
     }
 }
 
-@media (max-width: 480px) {
+
+@media (max-width: 360px) {
     .glow-text {
-        font-size: 1.5rem;
+        font-size: 5vw;
     }
 
     .tech-title {
@@ -512,7 +535,7 @@ footer {
     }
 
     .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     }
 
     .projects-grid {
