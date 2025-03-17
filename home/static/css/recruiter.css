@@ -486,12 +486,28 @@ footer {
         margin-right: 12px;
     }
 
+    .about {
+        margin: 0 12px;
+        border-radius: 15px;
+        height: auto;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .glitch{
+        margin-top: 15px;
+    }
+
+    .fade-in{
+        font-size: 1.3rem;
+    }
+
     .glow-text {
         font-size: 2rem;
     }
 
     .tech-title {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 
     .hero-desc {
