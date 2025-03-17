@@ -481,8 +481,9 @@ footer {
         height: auto;
         padding: 30px 0px;
         padding-left: 5px;
-        width: 330px;
-        margin-left: 13px;
+        width: auto;
+        margin-left: 12px;
+        margin-right: 12px;
     }
 
     .glow-text {
@@ -500,6 +501,7 @@ footer {
     .btn {
         font-size: 0.9rem;
         padding: 10px 20px;
+        margin-left: 4px;
     }
 
     .skills-grid {
