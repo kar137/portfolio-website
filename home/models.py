@@ -7,6 +7,7 @@ class Projects(models.Model):
     description = models.TextField(max_length=200)
     image = models.ImageField(upload_to= "images/projects/")
     srclink = models.CharField(max_length=300)
+    date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.name}"

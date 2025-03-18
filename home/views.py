@@ -3,7 +3,7 @@ from django.views.generic import TemplateView, ListView
 from django.core.mail import send_mail
 from django.conf import settings
 from django.http import JsonResponse
-from .models import FavoriteMovies
+from .models import FavoriteMovies, Projects
 
 
 # Create your views here.
@@ -14,11 +14,18 @@ class BrowseView(TemplateView):
 class HomeView(TemplateView):
     template_name = "home/home.html"
 
-class RecruiterView(TemplateView):
+class RecruiterView(ListView):
+    model = Projects
     template_name = "home/recruiter.html"
+    context_object_name = "projects"
 
-    def get(self, request, *args, **kwargs):
-        return render(request, self.template_name, {'title': 'Recruiter'})
+    def get_queryset(self):
+        return Projects.objects.all().order_by('-date')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Recruiter'
+        return context
     
     def post(self, request, *args, **kwargs):
         name = request.POST.get('name')
@@ -67,7 +74,7 @@ class StalkerView(ListView):
     context_object_name = "movies"
     
     def get_queryset(self):
-        return FavoriteMovies.objects.order_by('-rating')[:3]
+        return FavoriteMovies.objects.all().order_by('-rating')[:3]
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -96,7 +103,7 @@ class AdventurerView(ListView):
     context_object_name = "movies"
 
     def get_queryset(self):
-        return FavoriteMovies.objects.order_by('-rating')[:3]
+        return FavoriteMovies.objects.all().order_by('-rating')[:3]
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
