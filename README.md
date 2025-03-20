@@ -13,5 +13,3 @@ The server is live at www.karanbista.com.np
 - Wait for at least a minute if it lags.
 
 <hr>
-
-By accessing this repository, you acknowledge and agree to these terms.
