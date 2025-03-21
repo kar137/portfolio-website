@@ -253,9 +253,18 @@ body {
 }
 
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    display: flex;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(200px, 1fr);
     gap: 1.5rem;
+    margin: 0 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+}
+
+.skills-grid::-webkit-scrollbar {
+    display: none;
 }
 
 .skill-card {
@@ -264,6 +273,8 @@ body {
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    scroll-snap-align: start;
 }
 
 .skill-card i {
@@ -515,18 +526,23 @@ footer {
 
     .glitch{
         margin-top: 15px;
+        font-size: 1.5rem;
     }
 
     .fade-in{
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 
     .glow-text {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .tech-title {
         font-size: 1.4rem;
+    }
+
+    .tech-stack{
+        font-size: 1rem;
     }
 
     .hero-desc {
@@ -540,9 +556,16 @@ footer {
     }
 
     .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        grid-template-columns: 1fr;
     }
 
+    .skill-card{
+        width: 200px;
+        gap: 1.5rem;
+    }
+    .skill-card p{
+        font-size: 0.8rem;
+    }
     .projects-grid {
         grid-template-columns: 1fr;
         height: 50vh;
