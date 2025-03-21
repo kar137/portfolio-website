@@ -299,12 +299,17 @@ body {
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(200px, 1fr);
     margin: 0 10px;
     gap: 1.5rem;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+}
+
+.Projects-grid::-webkit-scrollbar {
+    display: none;
 }
 
 .project-card {
@@ -313,6 +318,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    scroll-snap-align: start;
 }
 
 .project-card img {
