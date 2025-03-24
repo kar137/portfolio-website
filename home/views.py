@@ -20,7 +20,7 @@ class RecruiterView(ListView):
     context_object_name = "projects"
 
     def get_queryset(self):
-        return Projects.objects.all().order_by('-date')
+        return Projects.objects.all().order_by('date')
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -46,11 +46,18 @@ class RecruiterView(ListView):
             return JsonResponse({'success': False, 'message': 'Failed to send message. Please try again later.'})
         
 
-class DeveloperView(TemplateView):
+class DeveloperView(ListView):
+    model = Projects
     template_name = "home/developer.html"
+    context_object_name = "projects"
+
+    def get_queryset(self):
+        return Projects.objects.all().order_by('-date')
     
-    def get(self, request, *args, **kwargs):
-        return render(request, self.template_name, {'title':'Developer'})
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Developer'
+        return context
     
     def post(self, request, *args, **kwargs):
         name = request.POST.get("name")
