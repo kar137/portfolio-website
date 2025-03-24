@@ -16,14 +16,19 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo">Karan Bista</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#github">GitHub</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#github">GitHub</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
+
+
 
     <!-- Hero Section -->
     <section class="hero">
@@ -85,7 +90,15 @@
     <section id="projects" class="projects">
         <h2>Projects</h2>
         <div class="projects-grid">
-            <div class="project-card">
+            {% for project in projects %}
+                <div class="project-card">
+                    <img src="{{ project.image.url }}" alt="E-Commerce Platform">
+                    <h3>{{ project.name }}</h3>
+                    <p>{{ project.description}}</p>
+                    <a href="{{ project.srclink}}" class="btn">View Project</a>
+                </div>
+            {% endfor %}
+            {% comment %} <div class="project-card">
                 <img src="{% static 'images/project1.jpg' %}" alt="E-Commerce Platform">
                 <h3>E-Commerce Platform</h3>
                 <p>A full-stack e-commerce platform built with Django and React, featuring user authentication, payment integration, and product management.</p>
@@ -102,7 +115,7 @@
                 <h3>Task Management App</h3>
                 <p>A task management application with drag-and-drop functionality, built using Django REST Framework and React.</p>
                 <a href="#" class="btn">View Project</a>
-            </div>
+            </div> {% endcomment %}
         </div>
     </section>
 
