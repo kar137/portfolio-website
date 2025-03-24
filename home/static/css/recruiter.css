@@ -300,13 +300,13 @@ body {
 
 .projects-grid {
     display: flex;
-    justify-content: start;
-    margin: 0 10px;
+    grid-auto-flow: column;
+    margin-left: 10px;
+    margin-right: 10px;
     gap: 1.5rem;
     padding-bottom: 10px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    width: 100%;
 }
 
 .projects-grid::-webkit-scrollbar {
@@ -577,20 +577,24 @@ footer {
         font-size: 0.8rem;
     }
     .projects-grid {
+        grid-auto-flow: column;
         grid-template-columns: 1fr;
-        height: 50vh;
     }
 
     .project-card {
         background-color: #1e293b;
+        min-width: 235px;
+        gap: 1.5rem;
         padding: 1.5rem;
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         text-align: center;
+        padding-bottom: 0px;
     }
     
     .project-card img {
-        width: 75%;
+        width: 160px;
+        height: 90px;
         border-radius: 10px;
     }
     
@@ -601,6 +605,7 @@ footer {
     .project-card p {
         font-size: 0.7rem;
         line-height: 1.4;
+        margin-bottom: 12px;
     }
     
     .contact form {
