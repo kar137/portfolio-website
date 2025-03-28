@@ -126,7 +126,7 @@ body {
 
 .hamburger {
     position: absolute;
-    right: 30px;
+    right: 35px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1000;
