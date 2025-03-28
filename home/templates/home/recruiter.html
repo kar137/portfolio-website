@@ -19,6 +19,7 @@
         <div class="logo">Karan Bista</div>
         <button class="hamburger" onclick="toggleMenu()">☰</button>
         <div class="nav-container">
+            <div class="tech-overlay"></div>
             <ul class="nav-links">
                 <li><a href="{% url 'browse' %}">Home</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -218,16 +219,26 @@
         const navcontainer = document.querySelector('.nav-container');
         const hamburger = document.querySelector('.hamburger');
         
-        navContainer.classList.toggle('active');
+        navcontainer.classList.toggle('active');
+
+        document.body.style.overflow = navcontainer.classList.contains('active') ? 'hidden' : '';
         
         if (navcontainer.classList.contains('active')) {
             hamburger.innerHTML = '✕';
-            hamburger.style.fontSize = '1.8rem';
+            hamburger.style.transform = 'translateY(-50%) rotate(180deg)';
+            hamburger.style.color = '#0ff';
+            hamburger.style.textShadow = '0 0 10px rgba(0, 255, 255, 0.8)';
         } else {
             hamburger.innerHTML = '☰';
-            hamburger.style.fontSize = '2rem';
+            hamburger.style.transform = 'translateY(-50%) rotate(0deg)';
+            hamburger.style.color = 'white';
+            hamburger.style.textShadow = 'none';
         }
     }
+
+    document.querySelectorAll('.nav-container a').forEach(link => {
+        link.addEventListener('click', toggleMenu);
+    })
     
   </script>
 </body>
