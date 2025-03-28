@@ -215,7 +215,18 @@
     });
 
     function toggleMenu() {
-        document.querySelector(".nav-container").classList.toggle("active");
+        const navcontainer = document.querySelector('.nav-container');
+        const hamburger = document.querySelector('.hamburger');
+        
+        navContainer.classList.toggle('active');
+        
+        if (navcontainer.classList.contains('active')) {
+            hamburger.innerHTML = '✕';
+            hamburger.style.fontSize = '1.8rem';
+        } else {
+            hamburger.innerHTML = '☰';
+            hamburger.style.fontSize = '2rem';
+        }
     }
     
   </script>
