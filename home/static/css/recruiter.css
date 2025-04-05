@@ -51,6 +51,7 @@ body {
 
 .nav-links li {
     position: relative;
+    z-index: 999;
 }
 
 .nav-links a {
@@ -83,7 +84,7 @@ body {
 }
 
 .nav-container {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: -100%;
     width: 300px;
@@ -91,7 +92,7 @@ body {
     background: rgba(10, 10, 10, 0.98);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    z-index: 999;
+    z-index: -5;
     transition: right 0.5s cubic-bezier(0.33, 1, 0.68, 1);
     box-shadow: -5px 0 25px rgba(0, 255, 255, 0.2);
     border-left: 1px solid rgba(0, 255, 255, 0.1);
@@ -106,17 +107,18 @@ body {
 }
 
 /* Optional overlay for better UX */
-.nav-overlay {
-    position: fixed;
+.tech-overlay {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 998;
+    z-index: -1;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
+    display: none;
 }
 
 .nav-container.active + .nav-overlay {
@@ -125,6 +127,7 @@ body {
 }
 
 .hamburger {
+    display: none;
     position: absolute;
     right: 35px;
     top: 50%;
@@ -137,7 +140,6 @@ body {
     cursor: pointer;
     padding: 5px;
 }
-
 
 /* Hero Section */
 .hero {
@@ -528,9 +530,14 @@ footer {
 
 
     .nav-links {
+        display: none;
         flex-direction: column;
         gap: 10px;
         margin-top: 10px;
+    }
+
+    .nav-container.active .nav-links {
+        display: flex;
     }
     
     .hamburger {
@@ -544,6 +551,10 @@ footer {
 
     .nav-container.active {
         display: block;
+    }
+    
+    .navbar {
+        padding: 15px 20px;
     }
 
     /* Hide the default nav links on mobile */
