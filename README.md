@@ -1,4 +1,4 @@
-# 🚀 Portfolio Website
+# Portfolio Website
 
 Welcome to my **Portfolio Website**!  
 A modern, responsive, and blazing-fast web app to showcase my skills, projects, and experience.
