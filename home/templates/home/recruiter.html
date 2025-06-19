@@ -17,6 +17,12 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo">Karan Bista</div>
+        <ul class="nav-links1">
+                <li><a href="{% url 'browse' %}">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         <button class="hamburger" onclick="toggleMenu()">☰</button>
         <div class="nav-container">
             <div class="tech-overlay"></div>
@@ -41,21 +47,24 @@
             </h2>
             <p class="hero-desc">Building scalable web applications with a passion for clean code and innovative solutions.</p>
             <a href="#projects" class="btn">View My Work</a>
-            <a href="https://drive.google.com/file/d/1eLXyrQ5Dddxe9Ei_KZNMrwjmfK9bj-Kb/view?usp=drive_link" class="btn">View My Resume</a>
+            <a href="https://drive.google.com/file/d/1duhd3RqJGU_QAW8_yMKMkbZ55j3E10BU/view?usp=drivesdk" class="btn">View My Resume</a>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <h2 class="glitch">About Me</h2>
-        <p class="fade-in">I'm a passionate Full Stack Developer with over a year of experience in building robust and scalable web applications. I'm currently studying computer engineering at Nepal Engineering College in 5th semester and my expertise lies in Django, Python, and modern frontend frameworks like React. I thrive in solving complex problems and delivering high-quality solutions.</p>
+        <img src="{% static 'media/images/profilee.jpg' %}" alt="Karan Bista" style="width: 200px; border-radius: 100%; margin-bottom: 20px;" />
+        <p class="fade-in">I'm a passionate Full Stack Developer with over a year of experience in building robust and scalable web applications. I'm currently studying computer engineering at Nepal Engineering College. My expertise lies in Python, Django, Data analysis, and AI/ML. I thrive in solving complex problems and delivering high-quality solutions.</p>
         <div class="tech-stack">
-            <span>Django</span>
             <span>Python</span>
-            <span>React</span>
+            <span>Django</span>
+            <span>FastAPI</span>
             <span>JavaScript</span>
             <span>PostgreSQL</span>
             <span>REST APIs</span>
+            <span>ScikitLearn</span>
+            <span>AI/ML</span>
         </div>
         <div class="social-links">
             <a href="https://github.com/kar137" target="_blank"><i class="fab fa-github"></i></a>
@@ -71,12 +80,12 @@
             <div class="skill-card">
                 <i class="fab fa-python"></i>
                 <h3>Python</h3>
-                <p>Expertise in Python for backend development, data analysis, and automation.</p>
+                <p>Expertise in Python for backend development, data analysis, AI, and Machine Learning.</p>
             </div>
             <div class="skill-card">
                 <i class="fab fa-js"></i>
                 <h3>JavaScript</h3>
-                <p>Proficient in modern JavaScript frameworks like React and Vue.js.</p>
+                <p>Proficient in JavaScript for frontend development(DOM manipulation, ES6+ syntax, Async Programming.)</p>
             </div>
             <div class="skill-card">
                 <img src="https://www.svgrepo.com/show/353657/django-icon.svg" alt="Django Logo" width="50">
