@@ -13,11 +13,10 @@
 <body class="stalker-theme">
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="logo">Stalker</div>
+        <div class="logo">Karan Bista</div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#missions">Missions</a></li>
-            <li><a href="#gear">Gear</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -26,45 +25,43 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1 class="glow-text">Enter the <span id="typed"></span></h1>
-            <p class="subtitle">Where shadows speak and danger lurks.</p>
-            <p class="hero-desc">Become a Stalker. Navigate the Zone, uncover its secrets, and survive its horrors.</p>
+            <h1 class="glow-text">Hey, pretty Stalker! <span id="typed"></span></h1>
+            <p class="subtitle">Nothing is random here</p>
+            <p class="hero-desc">Curious explorer of shadows and code — navigating the Zone with creativity, courage, and a little bit of charm.</p>
             <a href="#missions" class="btn">Begin Your Journey</a>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
-        <h2 class="glitch">About the Zone</h2>
-        <p class="fade-in">The Zone is a place of anomalies, artifacts, and untold dangers. Only the bravest Stalkers dare to enter. Will you survive its mysteries?</p>
+        <h2 class="glitch">About me</h2>
+        <img src="{% static 'media/images/profilee.jpg' %}" alt="Karan Bista" style="width: 200px; border-radius: 100%; margin-bottom: 20px;" />
+        <p class="fade-in">I’m a tech enthusiast who loves diving into Python programming, web development, AI, and machine learning.  
+        Exploring new and cool stuff online keeps my curiosity alive — from coding challenges to the latest tech trends.  
+        When I’m not behind the screen, you’ll find me watching Marvel movies, playing Minecraft, strumming my guitar, or investing in stocks and crypto.</p>
         <div class="zone-features">
-            <span>Anomalies</span>
-            <span>Artifacts</span>
-            <span>Mutations</span>
-            <span>Secrets</span>
+            <span>Python</span>
+            <span>Web Dev</span>
+            <span>AI & ML</span>
+            <span>Explorer</span>
         </div>
     </section>
 
     <!-- Missions Section -->
     <section id="missions" class="missions">
-        <h2>Missions</h2>
+        <h2>Achievements</h2>
         <div class="missions-grid">
             <div class="mission-card">
-                <img src="{% static 'images/mission1.jpg' %}" alt="Recon Mission">
-                <h3>Recon Mission</h3>
-                <p>Scout the Zone for anomalies and gather intel on enemy movements.</p>
+                <img src="{% static 'media/images/ai.jpeg' %}" alt="Karan Bista" style="width: 200px; border-radius: 100%; margin-bottom: 20px;" />
+                <h3>AI/ML Fellowship</h3>
+                <p>As an AI Fellow at Fusemachines, I am undergoing an intensive, hands-on fellowship focused on advancing my skills in artificial intelligence 
+                    and machine learning.</p>
                 <a href="#" class="btn">Learn More</a>
             </div>
             <div class="mission-card">
-                <img src="{% static 'images/mission2.jpg' %}" alt="Artifact Retrieval">
-                <h3>Artifact Retrieval</h3>
-                <p>Retrieve rare artifacts from the heart of the Zone.</p>
-                <a href="#" class="btn">Learn More</a>
-            </div>
-            <div class="mission-card">
-                <img src="{% static 'images/mission3.jpg' %}" alt="Escape the Zone">
-                <h3>Escape the Zone</h3>
-                <p>Navigate through deadly anomalies and make it out alive.</p>
+                <img src="{% static 'media/images/gc.jpeg' %}" alt="Karan Bista" style="width: 200px; border-radius: 100%; margin-bottom: 20px;" />
+                <h3>CTO Intern</h3>
+                <p>Worked as a CTO for a company named GeometryCraft. Handled a project based on IOT and Machine Learning.</p>
                 <a href="#" class="btn">Learn More</a>
             </div>
         </div>
@@ -76,7 +73,7 @@
         <div class="tools-grid">
             {% for movie in movies %}
                 <div class="tool-card">
-                    <img src="{{ movie.image.url }}" alt="inception">
+                    <img src="{{ movie.image.url }}" alt="Karan Bista" style="width: 200px; height: 190px; border-radius: 100%; margin-bottom: 20px; object-fit: cover;" />
                     <h3>{{ movie.title }}</h3>
                     <p>{{ movie.description }}</p>
                 </div>
@@ -90,8 +87,6 @@
         <div class="gallery-grid">
             <img src="{% static 'images/gallery1.jpg' %}" alt="Zone Image 1">
             <img src="{% static 'images/gallery2.jpg' %}" alt="Zone Image 2">
-            <img src="{% static 'images/gallery3.jpg' %}" alt="Zone Image 3">
-            <img src="{% static 'images/gallery4.jpg' %}" alt="Zone Image 4">
         </div>
     </section>
 
@@ -116,7 +111,7 @@
     <!-- JavaScript -->
     <script>
         const typed = new Typed('#typed', {
-            strings: ['Shadows', 'Unknown', 'Danger'],
+            strings: ['You are being watched', 'Stalk or be stalked'],
             typeSpeed: 100,
             backSpeed: 50,
             loop: true
