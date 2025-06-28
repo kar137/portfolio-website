@@ -16,15 +16,22 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo">Karan Bista</div>
+        <ul class="nav-links1">
+                <li><a href="{% url 'browse' %}">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         <button class="hamburger" onclick="toggleMenu()">☰</button>
         <div class="nav-container">
             <div class="tech-overlay"></div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#github">GitHub</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="{% url 'browse' %}"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#skills"><i class="fas fa-tools"></i> Skills</a></li>
+                <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
+                <li><a href="#testimonials"><i class="fas fa-comment-dots"></i> Testimonials</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -46,12 +53,15 @@
         <h2 class="glitch">About Me</h2>
         <p class="fade-in">Hi, I'm a passionate developer with expertise in building scalable web applications, solving complex problems, and delivering high-quality solutions. I love exploring new technologies and contributing to open-source projects.</p>
         <div class="tech-stack">
-            <span>Django</span>
             <span>Python</span>
-            <span>React</span>
+            <span>ScikitLearn</span>
+            <span>Data Science</span>
+            <span>AI/ML</span>
+            <span>Django</span>
+            <span>FastAPI</span>
             <span>JavaScript</span>
             <span>PostgreSQL</span>
-            <span>Docker</span>
+            <span>REST APIs</span>
         </div>
         <div class="social-links">
             <a href="https://github.com/kar137" target="_blank"><i class="fab fa-github"></i></a>
@@ -187,24 +197,24 @@
         });
 
         function toggleMenu() {
-            const navcontainer = document.querySelector('.nav-container');
-            const hamburger = document.querySelector('.hamburger');
-            
-            navcontainer.classList.toggle('active');
-    
-            document.body.style.overflow = navcontainer.classList.contains('active') ? 'hidden' : '';
-            
-            if (navcontainer.classList.contains('active')) {
-                hamburger.innerHTML = '✕';
-                hamburger.style.transform = 'translateY(-50%) rotate(180deg)';
-                hamburger.style.color = '#0ff';
-                hamburger.style.textShadow = '0 0 10px rgba(0, 255, 255, 0.8)';
-            } else {
-                hamburger.innerHTML = '☰';
-                hamburger.style.transform = 'translateY(-50%) rotate(0deg)';
-                hamburger.style.color = 'white';
-                hamburger.style.textShadow = 'none';
-            }
+        const navcontainer = document.querySelector('.nav-container');
+        const hamburger = document.querySelector('.hamburger');
+        const overlay = document.querySelector('.tech-overlay');
+
+        navcontainer.classList.toggle('active');
+        overlay.classList.toggle('active');
+
+        document.body.style.overflow = navcontainer.classList.contains('active') ? 'hidden' : '';
+
+        if (navcontainer.classList.contains('active')) {
+            hamburger.innerHTML = '✕';
+            hamburger.style.color = '#0ff';
+            hamburger.classList.add('active-glow');
+        } else {
+            hamburger.innerHTML = '☰';
+            hamburger.style.color = 'white';
+            hamburger.classList.remove('active-glow');
+        }
         }
     
         document.querySelectorAll('.nav-container a').forEach(link => {
