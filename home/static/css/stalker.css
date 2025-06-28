@@ -592,6 +592,7 @@ footer {
         left: 0;
         background-color: #000; /* Adjust if needed */
         z-index: 1000;
+        padding: 0px 20px;
     }
 
     .nav-links {
@@ -599,12 +600,11 @@ footer {
         flex-direction: row;
         overflow-x: auto;         /* Enables horizontal scroll */
         white-space: nowrap;      /* Prevents items from wrapping */
-        margin-top: 10px;
+        margin: 0px 0px;
         padding-bottom: 10px;     /* Optional: space for scrollbar */
         gap: 10px;
         width: 90%;
         padding-left: 0px;
-        margin-top: 10px;
         scrollbar-width: none;           /* Firefox */
         -ms-overflow-style: none;        /* IE and Edge */
     }
@@ -614,13 +614,14 @@ footer {
     }
     .nav-links a{
         padding-right: 5px;
+        padding-left: 8px;
     }
     .nav-links.active {
         display: flex;
     }
 
     .hero {
-        margin-top: 100px;
+        margin-top: 80px;
         padding: 30px 15px;
         text-align: center;
     }
@@ -640,7 +641,10 @@ footer {
         margin-top: 10px;
     }
 
-    .about,
+    .about {
+        margin-top: 25px;
+        padding: 30px 15px;
+    }
     .missions,
     .tools,
     .gallery,
