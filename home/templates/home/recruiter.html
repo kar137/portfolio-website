@@ -132,6 +132,45 @@
         </div>
     </section>
 
+
+    <!-- Recommendation Section -->
+    <section class="testimonial-section">
+    <h2 class="testimonial-heading">What Others Say</h2>
+
+    <div class="testimonial-container">
+        <!-- Testimonial Card -->
+        <div class="testimonial-card">
+        <p class="testimonial-text short">
+            "It is my pleasure to make a personal recommendation for Karan Bista, whose stint as a CTO Intern at Somai Tech,
+            or specifically Geometry Connecting Dots, has been nothing short of extraordinary..."
+        </p>
+
+        <p class="testimonial-text full hidden">
+            "It is my pleasure to make a personal recommendation for Karan Bista, whose stint as a CTO Intern at Somai Tech, or specifically Geometry Connecting Dots, has been nothing short of extraordinary. 
+            His contribution to our firm has been truly exceptional, being a rare combination of technical skill, innovative creativity, and 
+            motivational leadership that has transformed our company's technological capabilities.
+            
+            Additionally, he has a superlative capacity to resolve complex problems with an extremely methodically analytical but 
+            creative approach and delivers efficient and long-lasting outcomes. His capacity to break down complex technical problems 
+            and come up with operational plans has been a propelling force in the launch of projects, most often with flying colors. 
+            At both debugging complex systems and process simplification, his analytical accuracy and focus on detail are unparalleled."
+        </p>
+
+        <button class="read-more-btn">Read More</button>
+
+        <div class="testimonial-profile">
+            <img src="{% static 'media/images/sanjiv.jpeg' %}" alt="Sanjiv Shrestha">
+            <div>
+            <p class="testimonial-name">Sanjiv Shrestha</p>
+            <p class="testimonial-role">CTO Intern at GeometryCraft - Connecting Dots</p>
+            <a href="https://www.linkedin.com/in/karanbista/details/recommendations/" target="_blank" class="testimonial-link">View on LinkedIn</a>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+
     <!-- GitHub Section -->
     <section id="github" class="github">
         <h2>GitHub Contributions</h2>
@@ -163,7 +202,7 @@
     <!-- JavaScript -->
   <script>
         // adding modern tech feature to hero section
-    const textArray = ["Python Developer", "AI/ML Engineer", "Tech Enthusiast"];
+    const textArray = ["Python Developer", "AI/ML Practitioner", "Tech Enthusiast"];
     let textIndex = 0;
     let charIndex = 0;
     const typingSpeed = 100;
@@ -226,30 +265,55 @@
     });
 
     function toggleMenu() {
-        const navcontainer = document.querySelector('.nav-container');
-        const hamburger = document.querySelector('.hamburger');
-        
-        navcontainer.classList.toggle('active');
+    const navcontainer = document.querySelector('.nav-container');
+    const hamburger = document.querySelector('.hamburger');
+    const overlay = document.querySelector('.tech-overlay');
 
-        document.body.style.overflow = navcontainer.classList.contains('active') ? 'hidden' : '';
-        
-        if (navcontainer.classList.contains('active')) {
-            hamburger.innerHTML = '✕';
-            hamburger.style.transform = 'translateY(-50%) rotate(180deg)';
-            hamburger.style.color = '#0ff';
-            hamburger.style.textShadow = '0 0 10px rgba(0, 255, 255, 0.8)';
-        } else {
-            hamburger.innerHTML = '☰';
-            hamburger.style.transform = 'translateY(-50%) rotate(0deg)';
-            hamburger.style.color = 'white';
-            hamburger.style.textShadow = 'none';
-        }
+    navcontainer.classList.toggle('active');
+    overlay.classList.toggle('active');
+
+    document.body.style.overflow = navcontainer.classList.contains('active') ? 'hidden' : '';
+
+    if (navcontainer.classList.contains('active')) {
+        hamburger.innerHTML = '✕';
+        hamburger.style.color = '#0ff';
+        hamburger.classList.add('active-glow');
+    } else {
+        hamburger.innerHTML = '☰';
+        hamburger.style.color = 'white';
+        hamburger.classList.remove('active-glow');
     }
+    }
+
+
+
 
     document.querySelectorAll('.nav-container a').forEach(link => {
         link.addEventListener('click', toggleMenu);
     })
-    
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.read-more-btn');
+
+        buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            const card = btn.closest('.testimonial-card');
+            const shortText = card.querySelector('.testimonial-text.short');
+            const fullText = card.querySelector('.testimonial-text.full');
+
+            if (fullText.classList.contains('hidden')) {
+            fullText.classList.remove('hidden');
+            shortText.classList.add('hidden');
+            btn.textContent = 'Show Less';
+            } else {
+            fullText.classList.add('hidden');
+            shortText.classList.remove('hidden');
+            btn.textContent = 'Read More';
+            }
+        });
+        });
+    });
+
   </script>
 </body>
 </html>
